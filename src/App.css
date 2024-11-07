@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background: linear-gradient(#F5EEFF, #8e44ad);
 }
 
-.App-link {
-  color: #61dafb;
+#root{
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  margin: 0 auto;
+  max-width: 410px;
+  border-radius: 10px;
+  background: linear-gradient(#352163, #33143C);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-section{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px;
+}
+
+.search-section .search-form{
+  width: 100%;
+  height: 54px;
+  position: relative;
+}
+
+.search-section .search-form span{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.search-section .search-input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 0 20px 0 50px;
+  background:  rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.1s ease;
+}
+
+.search-section .search-input:focus{
+  border-color: #a38cd9;
+}
+
+.search-section .search-input::placeholder{
+  color: #ddd;
+  text-transform: none;
+}
+
+.search-section .location-button{
+  height: 54px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  Color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  background:  rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.2s ease;
+}
+
+.search-section .location-button span{
+  font-size: 1.3rem;
+}
+
+.search-section .location-button:hover{
+  color: #b39fdf;
+  border-color: #a38cd9;
+}
+
+.weather-section :where(h2,p){
+  color: #fff;
+}
+
+.hourly-forecast .weather-list{
+  display: flex;
+}
+
+.hourly-forecast .weather-item .weather-icon{
+  width: 28px;
+  aspect-ratio: 1;
 }
