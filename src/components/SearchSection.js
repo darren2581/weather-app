@@ -3,7 +3,7 @@ const SearchSection = ({getWeatherDetails}) => {
 
   // Handles City Search Form Submission
   const handleCitySearch = (e) => {
-    // e.preventDefault(); // Prevent the form from submitting
+    e.preventDefault(); // Prevent the form from submitting
     const searchInput = e.target.querySelector('.search-input');
     const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${searchInput.value}&days=2`;
     getWeatherDetails(API_URL); // Fetches weather details for the entered city
