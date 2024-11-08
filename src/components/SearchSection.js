@@ -15,9 +15,6 @@ const SearchSection = ({getWeatherDetails}) => {
             <span className="material-symbols-outlined">search</span>
             <input type='search' className='search-input' placeholder='Enter a city name'/>
         </form>
-        <button className='location-button'>
-            <span className="material-symbols-outlined">my_location</span>
-        </button>
       </div>
   );
 }
