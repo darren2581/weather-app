@@ -20,11 +20,26 @@ body{
 }
 
 .container{
+  position: relative;
+  overflow: hidden;
   margin: 0 auto;
+  z-index: 1;
   max-width: 410px;
   border-radius: 10px;
   background: linear-gradient(#352163, #33143C);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background: url("clouds.png");
 }
 
 .search-section{
@@ -98,8 +113,58 @@ body{
   color: #fff;
 }
 
+.weather-section .current-weather{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 50px;
+}
+
+.current-weather .weather-icon{
+  width: 140px;
+  aspect-ratio: 1;
+}
+.current-weather .temperature{
+  margin: 18px 0;
+  display: flex;
+  font-size: 3.38rem;
+}
+
+.current-weather .temperature span{
+  font-size: 1.56rem;
+  font-weight:  400;
+  margin: 5px 0 0 2px;
+}
+
+.current-weather .description{
+  font-size: 1.25rem;
+}
+
+.hourly-forecast{
+  padding: 16px 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 .hourly-forecast .weather-list{
   display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+  padding-bottom: 16px;
+  margin-bottom: -16px;
+  scrollbar-color: transparent transparent;
+}
+
+.hourly-forecast:hover .weather-list{
+  scrollbar-color: #c5bcdb transparent;
+}
+
+.hourly-forecast .weather-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
 }
 
 .hourly-forecast .weather-item .weather-icon{
