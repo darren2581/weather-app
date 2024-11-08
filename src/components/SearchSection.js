@@ -14,6 +14,7 @@ const SearchSection = ({getWeatherDetails}) => {
         <form action="" className='search-form' onSubmit={handleCitySearch}>
             <span className="material-symbols-outlined">search</span>
             <input type='search' className='search-input' placeholder='Enter a city name'/>
+            <button type="submit" style={{display: 'none'}}>Submit</button>
         </form>
         <button className='location-button'>
             <span className="material-symbols-outlined">my_location</span>
